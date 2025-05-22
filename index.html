@@ -1,21 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kristina Linkem Real Estate</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-800">
-  <!-- Hero Section -->
-  <section class="relative bg-cover bg-center h-[80vh] flex items-center justify-center text-white" style="background-image: url('images/banner-pnw.jpg');">
-    <div class="bg-black/40 p-8 rounded-xl text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Rooted in the Pacific Northwest</h1>
-      <p class="text-lg md:text-xl">Growing Dreams into Reality</p>
-    </div>
-  </section>
-  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
-    © 2025 Kristina Linkem Land Real Estate — Terry Wise & Associates
-  </footer>
-</body>
-</html>
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone } from "lucide-react";
+
+export default function KristinaLinkemRealEstate() {
+  return (
+    <main className="bg-white text-gray-800">
+      {/* Hero Section */}
+      <section className="relative bg-cover bg-center h-[80vh] flex items-center justify-center text-white" style={{ backgroundImage: `url('/images/banner-pnw.jpg')` }}>
+        <div className="bg-black/40 p-8 rounded-xl text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Rooted in the Pacific Northwest</h1>
+          <p className="text-lg md:text-xl">Growing Dreams into Reality</p>
+        </div>
+      </section>
+
+      {/* About Kristina */}
+      <section className="py-16 px-4 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <img src="/images/KristinaPhoto.jpg" alt="Kristina Linkem professional" className="rounded-2xl shadow-xl" />
+        <div>
+          <h2 className="text-3xl font-semibold mb-4">Meet Kristina Linkem</h2>
+          <p className="text-gray-600 mb-4">With years of experience and a passion for helping clients find the perfect home, Kristina brings a warm, personalized approach to real estate. Whether you're buying, selling, or investing, her local knowledge and hands-on service ensure you're in good hands.</p>
+          <div className="flex items-center gap-4 mt-6">
+            <img src="/images/KristinaHeadshot.jpg" alt="Kristina Linkem headshot" className="w-20 h-20 rounded-full shadow-lg" />
+            <div>
+              <p className="font-semibold">Kristina Linkem</p>
+              <p className="text-sm text-gray-500">Terry Wise & Associates</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Listing: Waterfront Lots */}
+      <section className="bg-teal-50 py-16 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Waterfront Lots – Moses Lake</h2>
+          <img src="/images/waterfront-lots.jpg" alt="Waterfront lot diagram" className="rounded-xl shadow-lg mx-auto mb-6" />
+          <p className="text-gray-700 mb-6">Check out these 1/4 acre building lots positioned on the lake. Low bank private access, ready to build. Priced from $175,000 to $250,000—waterfront dream living made achievable!</p>
+          <ul className="text-left text-gray-600 space-y-2 max-w-xl mx-auto">
+            <li>✔️ Exclusive 22 Lots with Gated Entry</li>
+            <li>✔️ 326' of Lake Front</li>
+            <li>✔️ Community Park & Dock</li>
+            <li>✔️ 4 Bedroom Septic Designs</li>
+            <li>✔️ Cascade Valley Water & Grant County Jurisdiction</li>
+            <li>✔️ Room for Inground Pool, Sports Court, Garage or Gardens</li>
+          </ul>
+          <a href="https://www.cribflyer.com/3485-valley-road-ne-moses-lake" target="_blank" rel="noopener noreferrer" className="inline-block mt-6">
+            <Button>View Full Listing</Button>
+          </a>
+        </div>
+      </section>
+
+      {/* Featured Listing: Golden Given Parcels */}
+      <section className="py-16 px-4 bg-white border-t">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <img src="/images/Waterfront.jpg" alt="Golden Given Parcels aerial" className="rounded-2xl shadow-xl" />
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Two Parcels – Golden Given Rd E, Tacoma</h2>
+            <p className="text-gray-700 mb-4">1.38 acres total, zoned Community Employment. Entitlements in process for a large warehouse with wetland approval, SEPA submitted, sewer plan approved, and water availability confirmed.</p>
+            <ul className="text-gray-600 space-y-1">
+              <li>✔️ Continue with warehouse development or adjust to maximize each parcel</li>
+              <li>✔️ CE zoning allows contractor yard, storage, daycare, restaurant, offices, warehouse, auto, and industrial uses</li>
+              <li>✔️ MLS 2348047 – $925,000</li>
+              <li>✔️ Address: 10510 and 10514 Golden Given Rd E, Tacoma</li>
+            </ul>
+            <a href="https://www.crexi.com/properties/1264567/washington-two-parcels---golden-given" target="_blank" rel="noopener noreferrer" className="inline-block mt-6">
+              <Button>View Full Listing</Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 px-4 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12">Client Experiences</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card>
+            <CardContent className="p-6">
+              <p className="text-gray-700 italic">"Kristina made selling our home and finding a new one such a smooth experience. Her knowledge and kindness set her apart."</p>
+              <p className="text-right text-sm mt-4">— The Johnson Family</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6">
+              <p className="text-gray-700 italic">"I had no idea buying waterfront property could be this easy. Kristina guided us through every step."</p>
+              <p className="text-right text-sm mt-4">— Megan S.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="bg-white py-16 px-4 border-t">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">Ready to take the next step?</h2>
+          <p className="text-gray-600 mb-6">Contact Kristina today and start your real estate journey with confidence.</p>
+          <div className="flex flex-col md:flex-row justify-center gap-4 text-gray-700 text-lg">
+            <a href="tel:2534051844" className="flex items-center gap-2"><Phone size={20} /> 253-405-1844</a>
+            <a href="mailto:kristina@thelinkemgroup.com" className="flex items-center gap-2"><Mail size={20} /> kristina@thelinkemgroup.com</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-100 py-6 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Kristina Linkem Land Real Estate — Terry Wise & Associates
+      </footer>
+    </main>
+  );
+}
