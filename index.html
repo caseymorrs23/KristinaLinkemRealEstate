@@ -6,11 +6,65 @@
   <title>Kristina Linkem Real Estate</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: 'Inter', 'Helvetica Neue', sans-serif;
-    }
-  .carousel-indicators .indicator.active {
+body {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+.carousel-nav.prev {
+  left: 10px;
+}
+.carousel-nav.next {
+  right: 10px;
+}
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 10rem;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.carousel-indicators .indicator {
+  height: 0.75rem;
+  width: 0.75rem;
+  background-color: #cbd5e0;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.carousel-indicators .indicator.active {
   background-color: #14b8a6;
+  transform: scale(1.25);
 }
 </style>
 </head>
