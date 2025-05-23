@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send a Message to Kristina</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <section class="min-h-screen flex flex-col justify-center items-center p-8">
+    <h1 class="text-4xl font-bold text-teal-700 mb-4 text-center">Send a Message to Kristina</h1>
+    <p class="text-gray-600 mb-8 text-center">Fill out the form below and Kristina will be in touch soon.</p>
+    <form action="https://formsubmit.co/kristina@thelinkemgroup.com" method="POST" class="bg-gray-50 p-8 rounded-xl shadow-md w-full max-w-xl">
+      <input type="hidden" name="_next" value="https://caseymorrs23.github.io/KristinaLinkemRealEstate/thank-you.html">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="mb-4">
+        <label class="block text-sm font-semibold mb-1 text-gray-700">Name</label>
+        <input type="text" name="name" required class="w-full p-3 border rounded-lg shadow-sm">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-semibold mb-1 text-gray-700">Email</label>
+        <input type="email" name="email" required class="w-full p-3 border rounded-lg shadow-sm">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-semibold mb-1 text-gray-700">Message</label>
+        <textarea name="message" rows="5" required class="w-full p-3 border rounded-lg shadow-sm"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-lg font-semibold transition">Send Message</button>
+    </form>
+    <a href="index.html" class="mt-6 text-teal-600 hover:underline">← Return to Home</a>
+  </section>
+</body>
+</html>
