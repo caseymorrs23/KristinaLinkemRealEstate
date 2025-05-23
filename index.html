@@ -37,7 +37,48 @@
 </section>
 
     <!-- About Kristina -->
-  <section id="about" class="py-20 px-6 bg-gray-50">
+  <section class="bg-white py-20 px-6 border-t">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-bold text-teal-700 mb-6">Start Your Home Search</h2>
+    <input type="text" placeholder="Search by city, ZIP, or MLS #" class="w-full max-w-xl mx-auto p-4 border border-gray-300 rounded-lg shadow-sm" />
+  </div>
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 text-center">
+    <div class="bg-teal-100 p-6 rounded-xl shadow-md">
+      <h3 class="text-2xl font-bold text-teal-700 mb-2">Search Listings</h3>
+      <p class="text-gray-700 mb-4">Browse available homes and properties in your area.</p>
+      <a href="#listings" class="text-white bg-teal-600 px-5 py-2 rounded-full font-medium hover:bg-teal-700 transition">View Listings</a>
+    </div>
+    <div class="bg-teal-100 p-6 rounded-xl shadow-md">
+      <h3 class="text-2xl font-bold text-teal-700 mb-2">Find New Listings</h3>
+      <p class="text-gray-700 mb-4">Be the first to know when new properties hit the market.</p>
+      <a href="#contact" class="text-white bg-teal-600 px-5 py-2 rounded-full font-medium hover:bg-teal-700 transition">Get Alerts</a>
+    </div>
+    <div class="bg-teal-100 p-6 rounded-xl shadow-md">
+      <h3 class="text-2xl font-bold text-teal-700 mb-2">What's Your Home Worth?</h3>
+      <p class="text-gray-700 mb-4">Get a free home valuation from Kristina today.</p>
+      <a href="request-valuation.html" target="_blank" class="text-white bg-teal-600 px-5 py-2 rounded-full font-medium hover:bg-teal-700 transition">Request Valuation</a>
+    </div>
+  </div>
+</section>
+
+<!-- Home Valuation Form -->
+<section class="bg-gray-50 py-20 px-6">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-teal-700 mb-6">Request Your Home Valuation</h2>
+    <form action="https://formsubmit.co/kristina@thelinkemgroup.com" method="POST" class="space-y-6">
+      <input type="hidden" name="_next" value="thank-you.html" />
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border rounded-lg" />
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border rounded-lg" />
+      <input type="text" name="address" placeholder="Property Address" required class="w-full p-3 border rounded-lg" />
+      <textarea name="details" rows="4" placeholder="Tell us a bit more about your home..." class="w-full p-3 border rounded-lg"></textarea>
+      <div class="text-center">
+        <button type="submit" class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition">Request Valuation</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="about" class="py-20 px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
       <img src="kristina-professional.jpg" alt="Kristina Linkem professional" class="rounded-2xl shadow-2xl" />
       <div>
@@ -91,7 +132,7 @@
   <section id="testimonials" class="py-20 px-6 bg-gray-50">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl font-bold text-center text-teal-700 mb-12">Client Experiences</h2>
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="bg-white shadow-lg rounded-xl p-8 border border-gray-200">
         <p class="text-gray-700 italic">"Kristina made selling our home and finding a new one such a smooth experience. Her knowledge and kindness set her apart."</p>
         <p class="text-right text-sm mt-4 text-gray-500">— The Johnson Family</p>
@@ -101,7 +142,20 @@
         <p class="text-right text-sm mt-4 text-gray-500">— Megan S.</p>
       </div>
     </div>
-  </div>
+  <div class="bg-white shadow-lg rounded-xl p-8 border border-gray-200">
+  <p class="text-gray-700 italic">"Kristina helped us relocate across the state with ease. Her responsiveness and attention to detail were unmatched."</p>
+  <p class="text-right text-sm mt-4 text-gray-500">— The Chen Family</p>
+</div>
+<div class="bg-white shadow-lg rounded-xl p-8 border border-gray-200">
+  <p class="text-gray-700 italic">"Kristina's team helped sell our home in under a week with multiple offers. Highly recommend!"</p>
+  <p class="text-right text-sm mt-4 text-gray-500">— Sarah P.</p>
+</div>
+<div class="flex justify-center items-center gap-6 mt-10">
+  <img src="zillow-logo.png" alt="Zillow Logo" class="h-6" />
+  <img src="realtor-logo.png" alt="Realtor.com Logo" class="h-6" />
+  <img src="google-logo.png" alt="Google Logo" class="h-6" />
+</div>
+</div>
 </section>
 
   <!-- Contact anchor -->
@@ -125,7 +179,9 @@
         <input type="text" name="Name" placeholder="Your Name" required class="w-full p-3 border rounded-lg" />
         <input type="email" name="Email" placeholder="Your Email" required class="w-full p-3 border rounded-lg" />
         <textarea name="Message" rows="5" placeholder="Your Message" required class="w-full p-3 border rounded-lg"></textarea>
-        <button type="submit" class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition">Send Message</button>
+        <div class="text-center">
+          <button type="submit" class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition">Send Message</button>
+        </div>
       </form>
     </div>
   </section>
