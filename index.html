@@ -61,22 +61,7 @@
   </div>
 </section>
 
-<!-- Home Valuation Form -->
-<section class="bg-gray-50 py-20 px-6">
-  <div class="max-w-2xl mx-auto">
-    <h2 class="text-3xl font-bold text-center text-teal-700 mb-6">Request Your Home Valuation</h2>
-    <form action="https://formsubmit.co/kristina@thelinkemgroup.com" method="POST" class="space-y-6">
-      <input type="hidden" name="_next" value="thank-you.html" />
-      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border rounded-lg" />
-      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border rounded-lg" />
-      <input type="text" name="address" placeholder="Property Address" required class="w-full p-3 border rounded-lg" />
-      <textarea name="details" rows="4" placeholder="Tell us a bit more about your home..." class="w-full p-3 border rounded-lg"></textarea>
-      <div class="text-center">
-        <button type="submit" class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition">Request Valuation</button>
-      </div>
-    </form>
-  </div>
-</section>
+
 
 <section id="about" class="py-20 px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -132,31 +117,62 @@
   <section id="testimonials" class="py-20 px-6 bg-gray-50">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl font-bold text-center text-teal-700 mb-12">Client Experiences</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white shadow-lg rounded-xl p-8 border border-gray-200">
-        <p class="text-gray-700 italic">"Kristina made selling our home and finding a new one such a smooth experience. Her knowledge and kindness set her apart."</p>
-        <p class="text-right text-sm mt-4 text-gray-500">— The Johnson Family</p>
-      </div>
-      <div class="bg-white shadow-lg rounded-xl p-8 border border-gray-200">
-        <p class="text-gray-700 italic">"I had no idea buying waterfront property could be this easy. Kristina guided us through every step."</p>
-        <p class="text-right text-sm mt-4 text-gray-500">— Megan S.</p>
+    <div class="relative overflow-hidden">
+      <div class="carousel fade rounded-xl shadow-xl border border-gray-200">
+        <div class="slide active p-8">
+          <p class="text-gray-700 italic">"Kristina made selling our home and finding a new one such a smooth experience. Her knowledge and kindness set her apart."</p>
+          <p class="text-right text-sm mt-4 text-gray-500">— The Johnson Family</p>
+        </div>
+        <div class="slide p-8">
+          <p class="text-gray-700 italic">"I had no idea buying waterfront property could be this easy. Kristina guided us through every step."</p>
+          <p class="text-right text-sm mt-4 text-gray-500">— Megan S.</p>
+        </div>
+        <div class="slide p-8">
+          <p class="text-gray-700 italic">"Kristina helped us relocate across the state with ease. Her responsiveness and attention to detail were unmatched."</p>
+          <p class="text-right text-sm mt-4 text-gray-500">— The Chen Family</p>
+        </div>
+        <div class="slide p-8">
+          <p class="text-gray-700 italic">"Kristina's team helped sell our home in under a week with multiple offers. Highly recommend!"</p>
+          <p class="text-right text-sm mt-4 text-gray-500">— Sarah P.</p>
+        </div>
       </div>
     </div>
-  <div class="bg-white shadow-lg rounded-xl p-8 border border-gray-200">
-  <p class="text-gray-700 italic">"Kristina helped us relocate across the state with ease. Her responsiveness and attention to detail were unmatched."</p>
-  <p class="text-right text-sm mt-4 text-gray-500">— The Chen Family</p>
-</div>
-<div class="bg-white shadow-lg rounded-xl p-8 border border-gray-200">
-  <p class="text-gray-700 italic">"Kristina's team helped sell our home in under a week with multiple offers. Highly recommend!"</p>
-  <p class="text-right text-sm mt-4 text-gray-500">— Sarah P.</p>
-</div>
-<div class="flex justify-center items-center gap-6 mt-10">
-  <img src="zillow-logo.png" alt="Zillow Logo" class="h-6" />
-  <img src="realtor-logo.png" alt="Realtor.com Logo" class="h-6" />
-  <img src="google-logo.png" alt="Google Logo" class="h-6" />
-</div>
-</div>
+    <div class="flex justify-center items-center gap-6 mt-10">
+      <img src="zillow-logo.png" alt="Zillow Logo" class="h-6" />
+      <img src="realtor-logo.png" alt="Realtor.com Logo" class="h-6" />
+      <img src="google-logo.png" alt="Google Logo" class="h-6" />
+    </div>
+  </div>
 </section>
+
+<style>
+.carousel {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+</style>
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll('.carousel .slide');
+function showSlides() {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+  });
+  slideIndex = (slideIndex + 1) % slides.length;
+  slides[slideIndex].classList.add('active');
+}
+setInterval(showSlides, 4000);
+</script>
 
   <!-- Contact anchor -->
   <section id="contact" class="bg-white py-20 px-6 border-t">
