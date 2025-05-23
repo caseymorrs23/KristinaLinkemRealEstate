@@ -97,7 +97,9 @@ body {
   <section class="bg-white py-20 px-6 border-t">
   <div class="max-w-7xl mx-auto text-center mb-12">
     <h2 class="text-4xl font-bold text-teal-700 mb-6">Start Your Home Search</h2>
-    <input type="text" placeholder="Search by city, ZIP, or MLS #" class="w-full max-w-xl mx-auto p-4 border border-gray-300 rounded-lg shadow-sm" />
+    <form action="https://www.homes.com/real-estate/search/" method="GET" target="_blank" class="max-w-xl mx-auto">
+  <input name="q" type="text" placeholder="Search by city, ZIP, or MLS #" class="w-full p-4 border border-gray-300 rounded-lg shadow-sm" />
+</form>
   </div>
   <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 text-center">
     <div class="bg-teal-100 p-6 rounded-xl shadow-md">
@@ -118,7 +120,62 @@ body {
   </div>
 </section>
 
+<!-- Featured Listings by Area -->
+<section class="bg-gray-50 py-20 px-6">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-4xl font-bold text-teal-700 mb-10">Featured Listings by Area</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-xl font-bold text-teal-700 mb-2">Bonney Lake</h3>
+        <p class="text-gray-700 text-sm mb-4">Active listings in one of the region’s fastest-growing communities.</p>
+        <a href="https://www.homes.com/bonney-lake-wa/homes-for-sale/" target="_blank" class="text-white bg-teal-600 px-5 py-2 rounded-full font-medium hover:bg-teal-700 transition">View Listings</a>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-xl font-bold text-teal-700 mb-2">Enumclaw</h3>
+        <p class="text-gray-700 text-sm mb-4">Browse properties in a charming, close-knit community near Mt. Rainier.</p>
+        <a href="https://www.homes.com/enumclaw-wa/homes-for-sale/" target="_blank" class="text-white bg-teal-600 px-5 py-2 rounded-full font-medium hover:bg-teal-700 transition">View Listings</a>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-xl font-bold text-teal-700 mb-2">Moses Lake</h3>
+        <p class="text-gray-700 text-sm mb-4">See waterfront and vacation homes available in sunny Eastern Washington.</p>
+        <a href="https://www.homes.com/moses-lake-wa/homes-for-sale/" target="_blank" class="text-white bg-teal-600 px-5 py-2 rounded-full font-medium hover:bg-teal-700 transition">View Listings</a>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Neighborhoods and Local Expertise -->
+<section class="bg-white py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-teal-700 text-center mb-10">Neighborhoods Kristina Knows</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="bg-gray-100 p-6 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-teal-700 mb-2">Bonney Lake</h3>
+        <p class="text-gray-600">Family-friendly neighborhoods with parks, great schools, and newer developments.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-teal-700 mb-2">Enumclaw</h3>
+        <p class="text-gray-600">Rural charm with beautiful views and a tight-knit community feel.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-teal-700 mb-2">Moses Lake</h3>
+        <p class="text-gray-600">Waterfront opportunities, vacation homes, and sunny eastern WA lifestyle.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-teal-700 mb-2">Lake Tapps</h3>
+        <p class="text-gray-600">Luxury homes with lake views and water access in a beautiful community.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-teal-700 mb-2">Auburn</h3>
+        <p class="text-gray-600">Accessible commute, family neighborhoods, and plenty of shopping nearby.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-teal-700 mb-2">Tacoma</h3>
+        <p class="text-gray-600">Historic homes, vibrant city life, and investment opportunities.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="about" class="py-20 px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -330,6 +387,17 @@ let slideTimer = setInterval(() => changeSlide(1), 4000);
     <img src="logo.png" alt="Kristina Linkem Logo" class="mx-auto h-12" />
   </div>
   <div>© 2025 Kristina Linkem Land Real Estate — Terry Wise & Associates</div>
-  </footer>
+  <div class="flex justify-center items-center gap-6 mt-6">
+    <a href="https://www.facebook.com/KristinaLinkemRealEstate" target="_blank">
+      <img src="facebook-icon.png" alt="Facebook" class="h-6" />
+    </a>
+    <a href="https://www.linkedin.com/in/kristina-linkem-realtor" target="_blank">
+      <img src="linkedin-icon.png" alt="LinkedIn" class="h-6" />
+    </a>
+    <a href="https://www.homes.com/real-estate-agents/kristina-linkem/lqtlndg/" target="_blank">
+      <img src="homes-icon.png" alt="Homes.com" class="h-6" />
+    </a>
+  </div>
+</footer>
 </body>
 </html>
