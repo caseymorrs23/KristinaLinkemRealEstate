@@ -9,7 +9,10 @@
     body {
       font-family: 'Inter', 'Helvetica Neue', sans-serif;
     }
-  </style>
+  .carousel-indicators .indicator.active {
+  background-color: #14b8a6;
+}
+</style>
 </head>
 <body class="bg-white text-gray-800">
   <header class="bg-white shadow-md sticky top-0 z-50">
@@ -119,23 +122,33 @@
     <h2 class="text-4xl font-bold text-center text-teal-700 mb-12">Client Experiences</h2>
     <div class="relative overflow-hidden">
       <div class="carousel fade rounded-xl shadow-xl border border-gray-200">
-        <div class="slide active p-8">
-          <p class="text-gray-700 italic">"Kristina made selling our home and finding a new one such a smooth experience. Her knowledge and kindness set her apart."</p>
-          <p class="text-right text-sm mt-4 text-gray-500">— The Johnson Family</p>
-        </div>
-        <div class="slide p-8">
-          <p class="text-gray-700 italic">"I had no idea buying waterfront property could be this easy. Kristina guided us through every step."</p>
-          <p class="text-right text-sm mt-4 text-gray-500">— Megan S.</p>
-        </div>
-        <div class="slide p-8">
-          <p class="text-gray-700 italic">"Kristina helped us relocate across the state with ease. Her responsiveness and attention to detail were unmatched."</p>
-          <p class="text-right text-sm mt-4 text-gray-500">— The Chen Family</p>
-        </div>
-        <div class="slide p-8">
-          <p class="text-gray-700 italic">"Kristina's team helped sell our home in under a week with multiple offers. Highly recommend!"</p>
-          <p class="text-right text-sm mt-4 text-gray-500">— Sarah P.</p>
-        </div>
-      </div>
+  <div class="slide active p-8">
+    <p class="text-gray-700 italic">"Kristina made selling our home and finding a new one such a smooth experience. Her knowledge and kindness set her apart."</p>
+    <p class="text-right text-sm mt-4 text-gray-500">— The Johnson Family</p>
+  </div>
+  <div class="slide p-8">
+    <p class="text-gray-700 italic">"I had no idea buying waterfront property could be this easy. Kristina guided us through every step."</p>
+    <p class="text-right text-sm mt-4 text-gray-500">— Megan S.</p>
+  </div>
+  <div class="slide p-8">
+    <p class="text-gray-700 italic">"Kristina helped us relocate across the state with ease. Her responsiveness and attention to detail were unmatched."</p>
+    <p class="text-right text-sm mt-4 text-gray-500">— The Chen Family</p>
+  </div>
+  <div class="slide p-8">
+    <p class="text-gray-700 italic">"Kristina's team helped sell our home in under a week with multiple offers. Highly recommend!"</p>
+    <p class="text-right text-sm mt-4 text-gray-500">— Sarah P.</p>
+  </div>
+  <div class="carousel-indicators flex justify-center items-center gap-3 mt-8 mx-auto max-w-xs bg-white px-4 py-2 rounded-full shadow-md">
+  <span class="indicator h-3 w-3 bg-gray-400 rounded-full cursor-pointer transition-all duration-300" onclick="setSlide(0)"></span>
+  <span class="indicator h-3 w-3 bg-gray-400 rounded-full cursor-pointer transition-all duration-300" onclick="setSlide(1)"></span>
+  <span class="indicator h-3 w-3 bg-gray-400 rounded-full cursor-pointer transition-all duration-300" onclick="setSlide(2)"></span>
+  <span class="indicator h-3 w-3 bg-gray-400 rounded-full cursor-pointer transition-all duration-300" onclick="setSlide(3)"></span>
+</div>
+  <div class="carousel-nav prev" onclick="changeSlide(-1)">&#10094;</div>
+  <div class="carousel-nav next" onclick="changeSlide(1)">&#10095;</div>
+  <div class="carousel-nav next" onclick="changeSlide(1)">&#10095;</div>
+</div>
+</div>
     </div>
     <div class="flex justify-center items-center gap-6 mt-10">
       <img src="zillow-logo.png" alt="Zillow Logo" class="h-6" />
@@ -146,7 +159,11 @@
 </section>
 
 <style>
-.carousel {
+.carousel-indicators .indicator.active {
+  background-color: #14b8a6;
+  transform: scale(1.25);
+}
+
   position: relative;
   width: 100%;
   height: auto;
@@ -160,18 +177,69 @@
   display: block;
   opacity: 1;
 }
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+.carousel-nav.prev {
+  left: 10px;
+}
+.carousel-nav.next {
+  right: 10px;
+}
 </style>
 <script>
 let slideIndex = 0;
 const slides = document.querySelectorAll('.carousel .slide');
+const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+const carousel = document.querySelector('.carousel');
+
 function showSlides() {
   slides.forEach((slide, i) => {
     slide.classList.remove('active');
+    if (indicators[i]) indicators[i].classList.remove('active');
   });
-  slideIndex = (slideIndex + 1) % slides.length;
   slides[slideIndex].classList.add('active');
+  if (indicators[slideIndex]) indicators[slideIndex].classList.add('active');
 }
-setInterval(showSlides, 4000);
+
+function changeSlide(n) {
+  slideIndex = (slideIndex + n + slides.length) % slides.length;
+  showSlides();
+  resetTimer();
+}
+
+function resetTimer() {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(() => changeSlide(1), 4000);
+}
+
+function pauseSlider() {
+  clearInterval(slideTimer);
+}
+
+function resumeSlider() {
+  slideTimer = setInterval(() => changeSlide(1), 4000);
+}
+
+function setSlide(n) {
+  slideIndex = n;
+  showSlides();
+  resetTimer();
+}
+
+carousel.addEventListener('mouseenter', pauseSlider);
+carousel.addEventListener('mouseleave', resumeSlider);
+
+showSlides();
+let slideTimer = setInterval(() => changeSlide(1), 4000);
 </script>
 
   <!-- Contact anchor -->
